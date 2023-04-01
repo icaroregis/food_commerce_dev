@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Container } from './styles'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import menuImg from '../../assets/menu.svg'
 import { ReactComponent as BurgerIcon } from '../../assets/burger.svg'
 import { ReactComponent as PizzaIcon } from '../../assets/pizza.svg'
@@ -19,31 +19,31 @@ export default function Sidebar() {
       <nav>
         <ul>
           <li>
-            <Link to={''} className='active'>
+            <NavLink to='/'>
               <BurgerIcon />
               <span>Hambúrgueres</span>
-            </Link>
+            </NavLink>
           </li>
 
           <li>
-            <Link to={''}>
+            <NavLink to='pizzas'>
               <PizzaIcon />
               <span>Pizzas</span>
-            </Link>
+            </NavLink>
           </li>
 
           <li>
-            <Link to={''}>
+            <NavLink to='drinks'>
               <BebidaIcon />
               <span>Bebidas</span>
-            </Link>
+            </NavLink>
           </li>
 
           <li>
-            <Link to={''}>
+            <NavLink to='ice-creams'>
               <SorveteIcon />
               <span>Sorvetes</span>
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
