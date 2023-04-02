@@ -1,7 +1,11 @@
+import { Head } from '../../../components/Head'
+import { SnackTitle } from '../../../components/SnackTitle'
+
 export default function IceCreams() {
   return (
-    <div>
-      <h1>IceCreams</h1>
-    </div>
+    <>
+      <Head title='Sorvetes' description='Os melhores sorvetes de Fortaleza!!!' />
+      <SnackTitle>Sorvetes</SnackTitle>
+    </>
   )
 }
