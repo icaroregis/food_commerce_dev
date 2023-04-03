@@ -67,7 +67,7 @@ export const Container = styled.aside<ContainerProps>`
         }
 
         &.active {
-          &::before {
+          &::after {
             content: '';
             position: absolute;
             left: 0;
