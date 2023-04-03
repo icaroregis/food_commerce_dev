@@ -1,34 +1,26 @@
+import { useState, useEffect } from 'react'
 import { Head } from '../../../components/Head'
 import { Snack } from '../../../components/Snack'
 import { SnackTitle } from '../../../components/SnackTitle'
+import { getPizzas } from '../../../services/api'
 
 export default function Pizzas() {
-  const data = [
-    {
-      id: 1,
-      snack: 'pizza',
-      name: 'Calabresa',
-      description:
-        'Pizza recheada com calabresa, cebola, mussarela, orégano e azeitona, tendo uma borda recheada com catupiry.',
-      price: 25,
-      image: 'https://i.imgur.com/5rjJGkV.jpg',
-    },
-    {
-      id: 2,
-      snack: 'pizza',
-      name: 'Portuguesa',
-      description:
-        'Pizza recheada com presunto, mussarela, ovo, cebola, azeitona, orégano, tomate e molho de tomate, tendo uma borda recheada com catupiry.',
-      price: 28.5,
-      image: 'https://i.imgur.com/WCoyGoI.png',
-    },
-  ]
+  const [pizzas, setPizzas] = useState([])
+
+  useEffect(() => {
+    async function getAllPizzas() {
+      const response = await getPizzas()
+      setPizzas(response.data)
+    }
+
+    getAllPizzas()
+  }, [])
 
   return (
     <>
       <Head title='Pizzas' description='As melhores pizzas de Fortaleza!!!' />
       <SnackTitle>Pizzas</SnackTitle>
-      <Snack snacks={data}></Snack>
+      <Snack snacks={pizzas}></Snack>
     </>
   )
 }
