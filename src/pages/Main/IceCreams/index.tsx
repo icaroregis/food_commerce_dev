@@ -1,11 +1,10 @@
-import { useContext } from 'react'
-import { SnackContext } from '../../../contexts/index'
+import { useSnack } from '../../../Hooks/useSnack'
 import { Head } from '../../../components/Head'
 import { Snack } from '../../../components/Snack'
 import { SnackTitle } from '../../../components/SnackTitle'
 
 export default function IceCreams() {
-  const { iceCreams } = useContext(SnackContext)
+  const { iceCreams } = useSnack()
 
   return (
     <>
